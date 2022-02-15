@@ -42,8 +42,12 @@ abi = json.loads(
     compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["metadata"]
 )["output"]["abi"]
 
+#Intializing Web3 and Providing the local Ganache Chain as my test chain.
+#Use your own chain here.
 w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 chain_id = 1337
+
+#The address which I have access to the private key for.
 my_address = "0x8865Aa30eBBB7b25674e301b58082b306c1560d3"
 
 #Creating a contract object
@@ -109,3 +113,9 @@ updated_tx_receipt = w3.eth.wait_for_transaction_receipt(updated_tx_hash)
 
 #Rechecking our new value.
 print(f"[Retrieve]\t Stored Value {simple_storage.functions.retrieve().call()}")
+
+
+#To undestand the line os.getenv("PRIVATE_KEY"). Its basically a environment variable storing the private key for my address.
+#I am using the package dotenv to load the .env file (which i git ignored) at the start of the script.
+#To workaround this: Create a .env file in VSCode and write export PRIVATE_KEY = 0xyour_private_key
+#Remember to add "0x" before the key.
