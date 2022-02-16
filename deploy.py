@@ -44,11 +44,11 @@ abi = json.loads(
 
 #Intializing Web3 and Providing the local Ganache Chain as my test chain.
 #Use your own chain here.
-w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
-chain_id = 1337
+w3 = Web3(Web3.HTTPProvider("https://rinkeby.infura.io/v3/3d07b066df0047dfbdc67c5215892a97"))
+chain_id = 4
 
 #The address which I have access to the private key for.
-my_address = "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"
+my_address = "0x912e8d8bA2a4d8634A3E351D93088dC2212242D6"
 
 #Creating a contract object
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
