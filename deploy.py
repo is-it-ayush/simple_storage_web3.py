@@ -44,11 +44,11 @@ abi = json.loads(
 
 #Intializing Web3 and Providing the local Ganache Chain as my test chain.
 #Use your own chain here.
-w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
+w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
 chain_id = 1337
 
 #The address which I have access to the private key for.
-my_address = "0x8865Aa30eBBB7b25674e301b58082b306c1560d3"
+my_address = "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"
 
 #Creating a contract object
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
